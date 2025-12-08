@@ -1,0 +1,159 @@
+.Navbar{
+    padding: 20px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Navbar .logo{
+    width: 250px;
+    background: transparent !important;
+    display: block;
+    opacity: 1;
+    filter: brightness(0.95) contrast(1.1);
+}
+
+.Navbar a:first-child{
+    background: transparent !important;
+    display: inline-block;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+}
+
+.navbarMenu{
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    font-size: 15px;
+    color:#eded05;
+}
+
+.navbarRight{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.Navbar button{
+    background: transparent;
+    font-size: 15px;
+    color: #eded05;
+    border: 1px solid #eded05;
+    padding: 10px 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.Navbar button:hover{
+    background-color: #49557e;
+    color: white;
+}
+
+.Navbar .active{
+    padding-bottom: 2px;
+    border-bottom: 2px solid #49557e;
+}
+
+.Navbar li{
+    cursor: pointer;
+}
+
+.searchIcon{
+    position: relative;
+}
+
+.searchIcon .dot{
+    position: absolute;
+    min-width: 10px;
+    min-height: 10px;
+    background-color: #eded05;
+    border-radius: 5px;
+    top: -8px;
+    right: -8px;
+}
+
+.navbarProfile{
+    position: relative;
+    cursor: pointer;
+}
+
+.navProfileDropdown{
+    position: absolute;
+    display: none;
+    right: 0;
+    z-index: 1;
+}
+
+.navbarProfile:hover .navProfileDropdown{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #fff2ef;
+    padding: 12px 25px;
+    border-radius: 4px;
+    border: 1px solid tomato;
+    outline: 2px solid white;
+    list-style: none;
+}
+
+.navProfileDropdown li{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.navProfileDropdown img{
+    width: 20px;
+}
+
+.navProfileDropdown li:hover{
+    color: tomato;
+}
+
+@media (max-width:1050px){
+    .Navbar .logo{
+        width: 140px;
+    }
+    .navbarMenu{
+        gap: 20px;
+        font-size: 17px;
+    }
+    .navbarRight{
+        gap: 30px;
+    }
+    .navbarRight img{
+        width: 22px;
+    }
+    .navbarRight button{
+        padding: 8px 25px;
+    }
+}
+
+@media (max-width:900px){
+    .Navbar .logo{
+        width: 120px;
+    }
+    .navbarMenu{
+        gap: 15px;
+        font-size: 16px;
+    }
+    .navbarRight{
+        gap: 20px;
+    }
+    .navbarRight img{
+        width: 20px;
+    }
+    .navbarRight button{
+        padding: 7px 20px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width:750px){
+    .navbarMenu{
+       display: none;
+    }
+}

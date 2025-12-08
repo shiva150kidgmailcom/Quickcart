@@ -1,0 +1,64 @@
+.ExploreMenu{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.ExploreMenu h1{
+    color: #fff;
+    font-weight: 500;
+}
+
+.ExploreMenuText{
+    max-width: 60%;
+    color: #808080;
+}
+
+.ExploreMenuList{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    text-align: center;
+    margin: 20px 0px;
+    overflow-x: scroll;
+}
+
+.ExploreMenuList::-webkit-scrollbar{
+    display: none;
+}
+
+.MenuListItem img{
+    width: 7.5vw;
+    min-width: 80px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: 0.1s;
+}
+
+.MenuListItem p{
+    margin-top: 10px;
+    color: #747474;
+    font-size: max(1.4vw,16px);
+    cursor: pointer;
+}
+
+.ExploreMenu hr{
+    margin: 10px 0px;
+    height: 2px;
+    background-color: #eded05;
+    border: none;
+}
+
+.MenuListItem .active{
+    border: 4px solid #eded05;
+    padding: 2px;
+}
+
+@media (max-width:1050px){
+    .ExploreMenuText{
+        max-width: 100%;
+        font-size: 14px;
+    }
+    
+}

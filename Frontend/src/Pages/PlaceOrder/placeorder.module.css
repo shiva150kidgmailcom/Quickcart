@@ -1,0 +1,39 @@
+.placeOrder{
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 50px;
+    margin-top: 100px;
+}
+
+.placeOrderLeft{
+    width: 100%;
+    max-width: (50%,500px);
+}
+
+.placeOrderLeft .title{
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 50px;
+    color: #fff;
+}
+
+.placeOrderLeft input{
+    margin-bottom: 15px;
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    outline-color: tomato;
+}
+
+.placeOrderLeft .multiInputs{
+    display: flex;
+    gap: 10px;
+}
+
+.placeOrderRight{
+    width: 100%;
+    max-width: (40%,500px);
+}
+
