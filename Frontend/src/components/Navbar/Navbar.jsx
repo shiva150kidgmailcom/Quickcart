@@ -3,12 +3,14 @@ import style from "../Navbar/navbar.module.css";
 import { assets } from "../../assets/assets";
 import { Link, useNavigate } from "react-router-dom";
 import { StoreContext } from "../../context/StoreContext";
+import { ThemeContext } from "../../context/ThemeContext";
 
 const Navbar = ({ setShowLogin }) => {
   // useState used here for menu
   const [menu, setMenu] = useState("home");
 
   const { getTotalCartAmount, token, setToken } = useContext(StoreContext)
+  const { theme, toggleTheme, isDark } = useContext(ThemeContext)
 
   const navigate = useNavigate()
   const Logout = () => {
@@ -53,21 +55,32 @@ const Navbar = ({ setShowLogin }) => {
         </a>
       </ul>
       <div className={style.navbarRight}>
-        <img src={assets.search_icon} />
-        <div className={style.searchIcon}>
-          <Link to='/cart'>
-            <img src={assets.basket_icon} />
-          </Link>
-          <div className={getTotalCartAmount() ? style.dot : ""}></div>
-        </div>
+        <button 
+          className={style.themeToggle}
+          onClick={toggleTheme}
+          title={isDark ? "Switch to Light Mode" : "Switch to Dark Mode"}
+        >
+          {isDark ? "☀️" : "🌙"}
+        </button>
+        <button 
+          className={style.cartButton} 
+          title="Cart"
+          onClick={() => navigate('/cart')}
+        >
+          <img src={assets.basket_icon} alt="Cart" />
+          {getTotalCartAmount() > 0 && <div className={style.dot}></div>}
+        </button>
         {!token ? <button
+          className={style.signInButton}
           onClick={() => {
             setShowLogin(true);
           }}
         >
           Sign in
         </button> : <div className={style.navbarProfile}>
-          <img src={assets.profile_icon} />
+          <button className={style.profileButton} title="Profile">
+            <img src={assets.profile_icon} alt="Profile" />
+          </button>
           <ul className={style.navProfileDropdown}>
             <li onClick={()=>navigate('/myorders')}><img src={assets.bag_icon} /><p>Orders</p></li>
             <hr />

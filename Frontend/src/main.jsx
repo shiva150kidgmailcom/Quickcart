@@ -3,11 +3,14 @@ import App from "./App.jsx";
 import "./index.css";
 import { BrowserRouter } from "react-router-dom";
 import StoreContextProvider from "./context/StoreContext.jsx";
+import ThemeProvider from "./context/ThemeContext.jsx";
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
-    <StoreContextProvider>
-      <App />
-    </StoreContextProvider>
+    <ThemeProvider>
+      <StoreContextProvider>
+        <App />
+      </StoreContextProvider>
+    </ThemeProvider>
   </BrowserRouter>
 );

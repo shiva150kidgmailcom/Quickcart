@@ -20,23 +20,29 @@
 
 .headerContent h2{
     font-weight: 500;
-    color: white;
+    color: var(--text-primary);
     font-size: max(4vw ,22px);
 }
 
 .headerContent p{
-    color: white;
+    color: var(--text-primary);
     font-size: 1vw;
 }
 
 .headerContent button{
     border: none;
-    color: #747474;
+    color: var(--text-secondary);
     font-weight: 400;
     padding: 1vw 2.3vw;
-    background-color: white;
+    background-color: var(--card-bg);
     font-size: max(1vw,13px);
     border-radius: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.headerContent button:hover{
+    background-color: var(--accent-color);
+    color: var(--text-primary);
 }
 
 @media (max-width:1050px){

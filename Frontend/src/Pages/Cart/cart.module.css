@@ -1,19 +1,19 @@
 .Cart{
     margin-top: 100px;
-    color : #fff;
+    color: var(--text-primary);
 }
 
 .CartItemsTitle{
     display: grid;
     grid-template-columns: 1fr 1.5fr 1fr 1fr 1fr 0.5fr;
     align-items: center;
-    color: grey;
+    color: var(--text-tertiary);
     font-size: max(1vw,12px);
 }
 
 .CartItemsItem {    
     margin: 10px 0px;
-    color: #fff;
+    color: var(--text-primary);
 }
 
 .CartItemsItem img{
@@ -22,7 +22,7 @@
 
 .Cart hr{
     height: 1px;
-    background-color: #e2e2e2;
+    background-color: var(--border-light);
     border: none;
 }
 
@@ -42,13 +42,13 @@
     display: flex;
     flex-direction: column;
     gap: 20px; 
-    color: #fff;
+    color: var(--text-primary);
 }
 
 .CartTotalDetails{
     display: flex;
     justify-content: space-between;
-    color: #fff;
+    color: var(--text-primary);
 }
 
 .CartTotal hr{
@@ -57,12 +57,17 @@
 
 .CartTotal button{
     border: none;
-    color: black;
-    background-color: #eded05;
+    color: var(--text-primary);
+    background-color: var(--accent-color);
     width: max(18vw,250px);
     padding: 12px 0px;
     border-radius: 4px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.CartTotal button:hover{
+    background-color: var(--accent-hover);
 }
 
 .CartPromoCode{
@@ -70,7 +75,7 @@
 }
 
 .CartPromoCode p{
-    color: #555;
+    color: var(--text-muted);
 }
 
 .CartPromoCodeInput{
@@ -78,7 +83,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #eaeaea;
+    background-color: var(--bg-secondary);
     border-radius: 4px;
 }
 
@@ -87,16 +92,22 @@
     border: none;
     outline: none;
     padding-left: 10px;
+    color: var(--text-primary);
 }
 
 .CartPromoCodeInput button{
     width: max(10vw,150px);
     padding: 12px 5px;
-    background-color: black;
+    background-color: var(--bg-tertiary);
     border: none;
-    color: white;
+    color: var(--text-primary);
     border-radius: 4px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.CartPromoCodeInput button:hover{
+    background-color: var(--accent-hover);
 }
 
 @media (max-width:750px){
