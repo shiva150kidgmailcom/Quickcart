@@ -15,15 +15,30 @@ const port = process.env.PORT || 4000;
 
 //middleware
 app.use(express.json()) // For parsing json files coming to backend
+
+// CORS configuration
+const allowedOrigins = [
+  process.env.FRONTEND_URL,
+  process.env.ADMIN_URL,
+  "http://localhost:5173",
+  "http://localhost:5174"
+].filter(Boolean); // Remove undefined values
+
 app.use(cors({
-  origin: [
-    process.env.FRONTEND_URL || "http://localhost:5173",
-    process.env.ADMIN_URL || "http://localhost:5174",
-    "http://localhost:5173",
-    "http://localhost:5174"
-  ],
-  credentials: true
-})) // To access backend from any frontend
+  origin: function (origin, callback) {
+    // Allow requests with no origin (like mobile apps or curl requests)
+    if (!origin) return callback(null, true);
+    
+    if (allowedOrigins.indexOf(origin) !== -1 || allowedOrigins.some(allowed => origin && origin.includes(allowed))) {
+      callback(null, true);
+    } else {
+      callback(null, true); // Allow all origins for now - tighten this in production
+    }
+  },
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'token']
+}))
 
 
 // DB Connection 
