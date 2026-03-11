@@ -71,7 +71,5 @@ app.get('/', (req, res) => {
 });
 
 
-// To Run on port 4000
-app.listen(port,()=>{
-    console.log(`Server Running on http://localhost:${port}`)
-})
+
+
