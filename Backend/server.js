@@ -42,7 +42,21 @@ app.use(cors({
 
 
 // DB Connection 
-connectDB();
+const startServer = async () => {
+  try {
+    await connectDB();
+    console.log("DB Connected");
+
+    app.listen(port, () => {
+      console.log(`Server Running on port ${port}`);
+    });
+
+  } catch (error) {
+    console.log("Server failed to start:", error);
+  }
+};
+
+startServer();
 
 // API Endpoint 
 app.use("/api/food",foodRouter)
